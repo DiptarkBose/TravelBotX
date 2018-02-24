@@ -8,13 +8,22 @@ import xml.etree.ElementTree
 # **********************************************
 
 # Replace the subscriptionKey string value with your valid subscription key.
-def translate(text):
+def translate(text, t_l):
 	subscriptionKey = 'f2cc99279b4444a58e89ce9a7c816c33'
 
 	host = 'api.microsofttranslator.com'
 	path = '/V2/Http.svc/Translate'
-
-	target = 'en-us'
+	t_l.lower()
+	if(t_l=="german"):
+		target ='de'
+	elif(t_l=="english"):
+		target= 'en-us'
+	elif(t_l=="chinese"):
+		target='zh-CHS'
+	elif(t_l=="spanish"):
+		target='es'
+	elif(t_l=="french"):
+		target='fr'
 
 	params = '?to=' + target + '&text=' + urllib.parse.quote (text)
 
@@ -30,4 +39,4 @@ def translate(text):
 	z= (result.decode("utf-8"))
 	z=z[68: len(z)-9]
 	return(z)
-print(translate("Mein Name Ist Diptark"))
+print(translate("My  name is Diptark", "french"))
