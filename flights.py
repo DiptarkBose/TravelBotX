@@ -25,7 +25,7 @@ def get_airport_code(city):
 def search(src,dest,dateDep,cl,adults,show_min=False,children="0",infants="0"):
 	code_src = (get_airport_code(src))
 	code_dest = (get_airport_code(dest))
-	date =dateDep
+	date = dateDep
 	c = cl.upper()
 	ad = adults
 	child = children
@@ -44,6 +44,10 @@ def search(src,dest,dateDep,cl,adults,show_min=False,children="0",infants="0"):
 		res=res+"Arrival Time:"+row["arrtime"]+"\n"
 		res+="Travel Time:"+row["duration"]+"\n"
 		res+="Airline:"+row["airline"]+"\n"
+		if(row["seatsavailable"]>"300"):
+			res+="Seats Available:"+"NA"+"\n"
+		else:
+			res+="Seats:"+row["seatsavailable"]+"\n"
 		res+="Fare:"+str(row["fare"]["grossamount"])+"\n"
 		if row["fare"]["grossamount"]<=m:
 			m=row["fare"]["grossamount"]
@@ -63,6 +67,10 @@ def search(src,dest,dateDep,cl,adults,show_min=False,children="0",infants="0"):
 		min_airline+= "Arrival Time:"+data[pos]["arrtime"]+"\n"
 		min_airline+="Travel Time:"+data[pos]["duration"]+"\n"
 		min_airline+="Airline:"+data[pos]["airline"]+"\n"
+		if(data[pos]["seatsavailable"]>"300"):
+			min_airline+="Seats Available:"+"NA"+"\n"
+		else:
+			min_airline+="Seats:"+data[pos]["seatsavailable"]+"\n"		
 		min_airline+="Fare:"+str(data[pos]["fare"]["grossamount"])+"\n"
 		return min_airline
 	else:
