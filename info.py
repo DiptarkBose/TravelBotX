@@ -15,3 +15,5 @@ def search_duckduckgo_instant_api(s_string):
 	str_ans=parsed_json['AbstractText']
 	return(str_ans)
 print(search_duckduckgo_instant_api("kuala lumpur"))
+
+#Search works on things like Mahatma Gandhi, Bangkok, Kuala Lumpur
