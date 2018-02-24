@@ -10,7 +10,6 @@ def search(src,dest,dateDep):
 	response = requests.get(url)
 	data = response.json()
 	data = data["data"]["onwardflights"]
-
 	res=""
 	for row in data:
 		res+="Origin:"+row["origin"]+"\n"
@@ -23,8 +22,30 @@ def search(src,dest,dateDep):
 		res+="Fare:"+row["fare"]["totalfare"]+"\n"
 		res+="Travels Name"+row["TravelsName"]+"\n"
 		res+="\n"
-
 	return res
 
-result = search("bangalore","mangalore","20180301")
+def filter1(src,dest,dateDep,filter):
+	dateDep=str(dateDep)
+	url=base_url+"source="+src+"&destination="+dest+"&dateofdeparture="+dateDep
+	response = requests.get(url)
+	data = response.json()
+	data = data["data"]["onwardflights"]
+	res=""
+	for row in data:
+		if(filter in row["seat"]):
+			res+="Origin:"+row["origin"]+"\n"
+			res+="Destination:"+row["destination"]+"\n"
+			res+="Departure Time:"+row["DepartureTime"]+"\n"
+			res+="Arrival Time:"+row["ArrivalTime"]+"\n"
+			res+="Seat:"+row["seat"]+"\n"
+			res+="Duration:"+row["duration"]+"\n"
+			res+="Type:"+row["BusType"]+"\n"
+			res+="Fare:"+row["fare"]["totalfare"]+"\n"
+			res+="Travels Name:"+row["TravelsName"]+"\n"
+			res+="\n"
+	return res
+
+
+seat_type_filter = "ST"
+result = filter1("bangalore","mangalore","20180301",seat_type_filter)
 print(result)
