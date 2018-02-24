@@ -1,6 +1,7 @@
 #cphfd4goh2
 import json, requests
 import urllib
+import datetime
 '''
 def name_to_code(station_name):
 	url="https://api.railwayapi.com/v2/name-to-code/name/station_name/apikey/cphfd4goh2/"
@@ -22,5 +23,13 @@ def train_between(from_station, to_station, date):
 		str_ans+='\n'
 	print(str_ans)
 	
-train_between("gkp", "jat", "12-03-2018")
+#train_between("gkp", "jat", "12-03-2018")
 
+def live_train_status(train_number):
+	date=datetime.datetime.today().strftime('%d-%m-%Y')
+	url="https://api.railwayapi.com/v2/live/train/"+str(train_number)+"/date/"+str(date)+"/apikey/cphfd4goh2/"
+	resp = requests.get(url)
+	parsed_json=json.loads(resp.text);
+	str_ans=parsed_json['position']
+	print(str_ans)
+live_train_status(56640);
