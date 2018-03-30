@@ -4,7 +4,7 @@ import csv
 import json
 app_id="Insert id here"
 api_key="Insert API Key here"
-base_url= "http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=b2f41b4c&app_key=949f76f49eca84daa9990c3ae7e42efa&city_id="
+base_url= "http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=app_id&app_key=api_key&city_id="
 
 def getid(city):
 	with open("city_list.csv") as csvfile:
