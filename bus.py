@@ -1,8 +1,8 @@
 from pprint import pprint
 import requests
 import json
-app_id="b2f41b4c"
-api_key="c8958fb975a5fdcaca0d46e502cb8ec1"
+app_id="Insert id here"
+api_key="Insert key here"
 base_url="http://developer.goibibo.com/api/bus/search/?app_id=b2f41b4c&app_key=949f76f49eca84daa9990c3ae7e42efa&format=json&"
 def search(src,dest,dateDep):
 	dateDep=str(dateDep)
