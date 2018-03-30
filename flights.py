@@ -1,8 +1,8 @@
 from pprint import pprint
 import requests
 import json
-app_id="b2f41b4c"
-api_key="c8958fb975a5fdcaca0d46e502cb8ec1"
+app_id="Insert id here"
+api_key="Insert key here"
 base_url="http://developer.goibibo.com/api/search/?app_id=b2f41b4c&app_key=c8958fb975a5fdcaca0d46e502cb8ec1&format=json&"
 def get_airport_code(city):
 	f=open("IATADatabase.py")
