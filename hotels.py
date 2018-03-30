@@ -2,8 +2,8 @@ from pprint import pprint
 import requests
 import csv
 import json
-app_id="b2f41b4c"
-api_key="c8958fb975a5fdcaca0d46e502cb8ec1"
+app_id="Insert id here"
+api_key="Insert API Key here"
 base_url= "http://developer.goibibo.com/api/voyager/get_hotels_by_cityid/?app_id=b2f41b4c&app_key=949f76f49eca84daa9990c3ae7e42efa&city_id="
 
 def getid(city):
