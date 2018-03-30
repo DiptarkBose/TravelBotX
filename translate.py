@@ -9,7 +9,7 @@ import xml.etree.ElementTree
 
 # Replace the subscriptionKey string value with your valid subscription key.
 def translate(text, t_l):
-	subscriptionKey = 'f2cc99279b4444a58e89ce9a7c816c33'
+	subscriptionKey = '<subKey>'
 
 	host = 'api.microsofttranslator.com'
 	path = '/V2/Http.svc/Translate'
