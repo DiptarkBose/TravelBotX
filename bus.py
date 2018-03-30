@@ -3,7 +3,7 @@ import requests
 import json
 app_id="Insert id here"
 api_key="Insert key here"
-base_url="http://developer.goibibo.com/api/bus/search/?app_id=b2f41b4c&app_key=949f76f49eca84daa9990c3ae7e42efa&format=json&"
+base_url="http://developer.goibibo.com/api/bus/search/?app_id=app_id&app_key=app_key&format=json&"
 def search(src,dest,dateDep):
 	dateDep=str(dateDep)
 	url=base_url+"source="+src+"&destination="+dest+"&dateofdeparture="+dateDep
